@@ -1,0 +1,59 @@
+/* top element */
+.navBar {
+	display: flex;
+}
+/* div img */
+.navBar-logo {
+	margin-left: 15px;
+}
+.navBar-logo img {
+	height: 50px;
+}
+/* nav global*/
+.navBar-nav ul {
+	list-style: none;
+	font-size: 16px;
+	border-radius: 8px;
+}
+.nav-item {
+	padding: 2px 12px;
+	border-radius: 8px;
+	text-decoration: none;
+}
+.nav-item:hover {
+	background-color: rgba(0, 0, 0, 0.04);
+	cursor: pointer;
+}
+.isActiveLink {
+	font-weight: bold;
+}
+/* nav first level */
+.nav-categories {
+	display: flex;
+}
+.nav-categories li {
+	position: relative;
+}
+/* nav second level */
+.nav-calculators {
+	display: none;
+	position: absolute;
+	min-width: 200px;
+	padding: 4px;
+
+	background-color: white;
+	box-shadow: 0px 4px 18px rgb(0 0 0/4%), 0px 2.025px 7.84688px rgba(0, 0, 0, 0.027), 0px 0.8px 2.925px rgb(0 0 0/2%),
+		0px 0.175px 1.04062px rgba(0, 0, 0, 0.013);
+}
+.nav-categories li:hover .nav-calculators {
+	display: block;
+	animation: fadeIn 200ms ease-in-out;
+}
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
