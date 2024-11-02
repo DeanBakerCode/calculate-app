@@ -13,11 +13,6 @@ const NavMenu = [
 				to: '/sales/margin',
 				image: '',
 			},
-			{
-				CalculatorName: 'template',
-				to: '/sales/template',
-				image: '',
-			},
 		],
 	},
 	{

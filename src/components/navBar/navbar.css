@@ -1,28 +1,42 @@
 /* top element */
 .navBar {
 	display: flex;
+	gap: 24px;
+	padding: 12px;
+
+	font-size: 16px;
+	border-bottom: 1px solid #f9f9f9;
 }
 /* div img */
 .navBar-logo {
-	margin-left: 15px;
+	display: flex;
+	align-items: center;
 }
 .navBar-logo img {
-	height: 50px;
+	height: 18px;
 }
 /* nav global*/
 .navBar-nav ul {
 	list-style: none;
-	font-size: 16px;
 	border-radius: 8px;
+
+	margin: 0;
 }
 .nav-item {
-	padding: 2px 12px;
+	padding: 0 24px 0 12px;
 	border-radius: 8px;
 	text-decoration: none;
+	line-height: 32px;
 }
 .nav-item:hover {
-	background-color: rgba(0, 0, 0, 0.04);
+	background-color: var(--hover-bg);
 	cursor: pointer;
+}
+.navBar-nav a {
+	text-decoration: none;
+}
+.navBar-nav a:visited {
+	color: var(--text-color);
 }
 .isActiveLink {
 	font-weight: bold;
@@ -30,6 +44,7 @@
 /* nav first level */
 .nav-categories {
 	display: flex;
+	padding: 0;
 }
 .nav-categories li {
 	position: relative;
@@ -38,15 +53,17 @@
 .nav-calculators {
 	display: none;
 	position: absolute;
-	min-width: 200px;
+	min-width: 140px;
 	padding: 4px;
 
 	background-color: white;
 	box-shadow: 0px 4px 18px rgb(0 0 0/4%), 0px 2.025px 7.84688px rgba(0, 0, 0, 0.027), 0px 0.8px 2.925px rgb(0 0 0/2%),
 		0px 0.175px 1.04062px rgba(0, 0, 0, 0.013);
 }
-.nav-categories li:hover .nav-calculators {
+.nav-categories .nav-item:hover .nav-calculators {
 	display: block;
+	top: 32px;
+	left: -4px;
 	animation: fadeIn 200ms ease-in-out;
 }
 @keyframes fadeIn {

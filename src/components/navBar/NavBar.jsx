@@ -6,7 +6,7 @@ export default function NavBar({ NavMenu }) {
 		<header className='navBar'>
 			<div className='navBar-logo'>
 				<NavLink to='/'>
-					<h1 className='logo'>Calculate</h1>
+					<img src='calculateLogo.png' />
 				</NavLink>
 			</div>
 			<nav className='navBar-nav'>
@@ -14,16 +14,16 @@ export default function NavBar({ NavMenu }) {
 					{NavMenu &&
 						NavMenu.map((category, index) => {
 							return (
-								<li key={index}>
-									<NavLink to={category.to} className={({ isActive }) => (isActive ? 'isActiveLink nav-item' : 'nav-item')}>
+								<li key={index} className='nav-item'>
+									<NavLink to={category.to} className={({ isActive }) => isActive && 'isActiveLink'}>
 										{category.CategoryName}
 									</NavLink>
 
 									<ul className='nav-calculators'>
 										{category.calculators.map((calculator, index) => {
 											return (
-												<li key={index}>
-													<NavLink to={calculator.to} className={({ isActive }) => (isActive ? 'isActiveLink nav-item' : 'nav-item')}>
+												<li key={index} className='nav-item'>
+													<NavLink to={calculator.to} className={({ isActive }) => isActive && 'isActiveLink'}>
 														{calculator.CalculatorName}
 													</NavLink>
 												</li>

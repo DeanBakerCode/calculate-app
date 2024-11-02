@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght,ELGR,ELSH@100..900,1..2,0..16&family=Inter:slnt,wght@-10..0,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
 :root {
-	--font: timesnewroamn;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	/* light colors */
+	--text-color: #050505;
+	--hover-bg: rgba(0, 0, 0, 0.04);
+	/* --floating-shadow: rgba(0, 0, 0, 0.04); */
+}
+body {
+	margin: 0;
+	color: var(--text-color);
 }
