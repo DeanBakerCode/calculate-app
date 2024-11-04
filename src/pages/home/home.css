@@ -1,0 +1,32 @@
+/* home */
+.home {
+	height: 100vh;
+}
+/* hero */
+.home-hero {
+	margin-top: 10vh;
+	display: flex;
+	justify-content: center;
+}
+/* hero tagline */
+.home-hero-tagline {
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+}
+.home-hero h1 {
+	font-size: 52px;
+	margin: auto 0;
+}
+.home-hero h3 {
+	font-size: 24px;
+	margin: auto 0;
+}
+/* hero image */
+.home-hero-img {
+	padding: 1em;
+}
+.home-hero-img img {
+	object-fit: cover;
+	max-height: 330px;
+}

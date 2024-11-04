@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import './navbar.css';
+import { PiCaretDownBold } from 'react-icons/pi';
 
 export default function NavBar({ NavMenu }) {
 	return (
@@ -17,6 +18,7 @@ export default function NavBar({ NavMenu }) {
 								<li key={index} className='nav-item'>
 									<NavLink to={category.to} className={({ isActive }) => isActive && 'isActiveLink'}>
 										{category.CategoryName}
+										<PiCaretDownBold className='nav-item-icon' />
 									</NavLink>
 
 									<ul className='nav-calculators'>

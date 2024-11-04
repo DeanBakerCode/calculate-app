@@ -20,7 +20,7 @@ const NavMenu = [
 		to: '/inventory',
 		calculators: [
 			{
-				CalculatorName: 'Min/Max',
+				CalculatorName: 'Re-Order Point',
 				to: '/inventory/reorderpoint',
 				image: '',
 			},
