@@ -8,11 +8,14 @@
 	-moz-osx-font-smoothing: grayscale;
 
 	/* light colors */
+	--color-bg: #ffffff;
 	--text-color: #050505;
 	--hover-bg: rgba(0, 0, 0, 0.04);
-	/* --floating-shadow: rgba(0, 0, 0, 0.04); */
+	--floating-shadow: 0px 4px 18px rgb(0 0 0/4%), 0px 2.025px 7.84688px rgba(0, 0, 0, 0.027), 0px 0.8px 2.925px rgb(0 0 0/2%),
+		0px 0.175px 1.04062px rgba(0, 0, 0, 0.013);
 }
 body {
 	margin: 0;
 	color: var(--text-color);
+	min-height: 100vh;
 }
