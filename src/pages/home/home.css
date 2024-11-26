@@ -1,10 +1,10 @@
 /* home */
 .home {
-	height: 100vh;
+	height: 100%;
+	padding-top: 10vh;
 }
 /* hero */
 .home-hero {
-	margin-top: 10vh;
 	display: flex;
 	justify-content: center;
 }
@@ -29,4 +29,5 @@
 .home-hero-img img {
 	object-fit: cover;
 	max-height: 330px;
+	border-radius: 12px;
 }
