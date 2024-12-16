@@ -33,10 +33,17 @@ export default function NavBar() {
                                     <ul className="nav-calculators">
                                         {category.calculators.map(
                                             (calculator, index) => {
+                                                {
+                                                    // console.log(calculator);
+                                                }
                                                 return (
                                                     <li
                                                         key={index}
-                                                        className="nav-item"
+                                                        className={
+                                                            !calculator.calculatorName
+                                                                ? 'nav-item disabled-link'
+                                                                : 'nav-item'
+                                                        }
                                                     >
                                                         <NavLink
                                                             to={calculator.to}
@@ -48,9 +55,9 @@ export default function NavBar() {
                                                                     : ''
                                                             }
                                                         >
-                                                            {
-                                                                calculator.calculatorName
-                                                            }
+                                                            {calculator.calculatorName
+                                                                ? calculator.calculatorName
+                                                                : calculator.data}
                                                         </NavLink>
                                                     </li>
                                                 );

@@ -1,4 +1,3 @@
-import numericCalculator from './calculatorTypes/numericCalculator';
 import discountData from './sales/discountData';
 
 class category {
@@ -18,14 +17,16 @@ class category {
     }
 }
 //- Category Sales
-const sales = new category('Sales');
-sales.addCalc(discountData);
+const finance = new category('Finance');
+finance.addCalc(discountData);
+finance.addCalc('Profit Margin');
+finance.addCalc('Rule of Seven');
 
 //- Category Inventory
 const inventory = new category('Inventory');
 
 //- Categories
-const atlas = [sales, inventory];
+const atlas = [finance, inventory];
 
 export default atlas;
 

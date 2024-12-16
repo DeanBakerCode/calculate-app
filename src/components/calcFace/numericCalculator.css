@@ -1,18 +1,18 @@
 .values-set {
     border-radius: 12px;
     background-color: var(--color-bg);
-    width: 360px;
+    width: 300px;
     padding: 12px;
     box-shadow: var(--floating-shadow);
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 20px;
 }
 .set-item {
     border: 2px solid var(--hover-bg);
     height: 52px;
     border-radius: 8px;
-    padding: 4px;
+    padding: 4px 6px;
 }
 
 .set-item label {
@@ -26,11 +26,11 @@
     position: absolute;
     font-size: 24px;
     background-color: var(--hover-bg);
-    top: 0;
+    top: 8px;
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 0 8px 0 0;
+    padding: 12px 8px 4px 8px;
     text-align: end;
     outline: none;
     border: transparent;
@@ -38,7 +38,7 @@
 }
 .read-only,
 .read-only input {
-    border: transparent;
+    /* border: 1px solid red; */
     cursor: not-allowed;
 }
 .read-only:hover {
@@ -59,4 +59,7 @@ input:selection .set-item {
 }
 .values-clear:hover {
     background-color: var(--hover-bg);
+}
+.user-value {
+    border-bottom: 2px solid lightblue;
 }
