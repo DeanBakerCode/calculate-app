@@ -1,92 +1,98 @@
 /* top element */
 .navBar {
-	display: flex;
-	gap: 24px;
-	padding: 12px;
+    display: flex;
+    gap: 24px;
+    padding: 12px;
 
-	font-size: 16px;
-	border-bottom: 1px solid var(--hover-bg);
+    font-size: 16px;
+    border-bottom: 1px solid var(--hover-bg);
 }
 /* nav logo img */
 .navBar-logo {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 }
 .navBar-logo img {
-	height: 1.2em;
+    height: 1.2em;
 }
 
 /* nav lists*/
 .navBar ul {
-	list-style: none;
-	margin: 0;
+    list-style: none;
+    margin: 0;
 }
 
 /* nav first level */
 .nav-categories {
-	display: flex;
-	padding: 0;
+    display: flex;
+    padding: 0;
 }
 .nav-categories li {
-	position: relative;
+    position: relative;
 }
 
 /* navigation item */
 .nav-item a {
-	display: flex;
-	align-items: center;
-	white-space: nowrap;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
 
-	padding: 0 8px;
-	border-radius: 8px;
+    padding: 0 8px;
+    border-radius: 8px;
 
-	text-decoration: none;
-	line-height: 32px;
+    color: var(--text-color);
+    text-decoration: none;
+    line-height: 32px;
 }
 .nav-item a:hover {
-	background-color: var(--hover-bg);
-	cursor: pointer;
+    background-color: var(--hover-bg);
+    cursor: pointer;
 }
 .nav-item a:visited {
-	color: var(--text-color);
+    color: var(--text-color);
 }
 .nav-item-icon {
-	height: 1em;
-	font-size: 0.94em;
-	margin-left: 4px;
+    height: 1em;
+    font-size: 0.94em;
+    margin-left: 4px;
 }
 .isActiveLink {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 /* nav second level */
 .nav-calculators {
-	display: none;
-	position: absolute;
-	/* min-width: 140px; */
-	padding: 4px;
-	border-radius: 12px;
+    display: none;
+    position: absolute;
+    /* min-width: 140px; */
+    padding: 4px;
+    border-radius: 12px;
 
-	background-color: var(--color-bg);
-	box-shadow: var(--floating-shadow);
+    background-color: var(--color-bg);
+    box-shadow: var(--floating-shadow);
 }
 
 /* effects */
 .nav-categories .nav-item:hover .nav-calculators {
-	display: block;
-	top: 32px;
-	left: -4px;
-	animation: fadeIn 200ms ease-in-out;
+    display: block;
+    top: 32px;
+    left: -4px;
+    animation: fadeIn 200ms ease-in-out;
 }
 @keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 .nav-categories .nav-item:hover .nav-item-icon {
-	rotate: 180deg;
-	/* transition: rotate 100ms ease-in-out; */
+    rotate: 180deg;
+    /* transition: rotate 100ms ease-in-out; */
+}
+.disabled-link {
+    pointer-events: none;
+    opacity: 0.6;
+    cursor: not-allowed;
 }

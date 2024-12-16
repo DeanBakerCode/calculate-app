@@ -6,8 +6,8 @@ const appRouter = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path='/' element={<Root />}>
 			<Route path='/' element={<Home />} />
-			<Route path=':category' element={<Category />} />
-			<Route path=':category/:calculator' element={<Calculator />} />
+			<Route path=':categoryPrm' element={<Category />} />
+			<Route path=':categoryPrm/:calculatorPrm' element={<Calculator />} />
 			<Route path='about' element={<About />} />
 		</Route>
 	)

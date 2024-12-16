@@ -1,0 +1,19 @@
+.calculator {
+    /* background-color: antiquewhite; */
+    min-height: 100vh;
+    padding-top: 10vh;
+}
+.calculator-container {
+    /* background-color: aquamarine; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8vw;
+}
+
+.calculator-details {
+    max-width: 50vw;
+}
+.calculator-details p {
+    text-align: justify;
+}
