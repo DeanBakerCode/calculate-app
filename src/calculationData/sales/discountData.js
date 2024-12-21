@@ -1,17 +1,16 @@
 const discountData = {
-    name: 'Discount',
+    title: 'Discount',
+    requiredVariableCount: 2,
     description:
-        'Profit margin is a financial ratio that measures the percentage of profit earned by a company in relation to its revenue. Expressed as a percentage, it indicates how much profit the company makes for every dollar of revenue generated. Profit margin is important because this percentage provides a comprehensive picture of the operating efficiency of a business or an industry. All margin changes provide useful indicators for assessing growth potential, investment viability and the financial stability of a company relative to its competitors. Maintaining a healthy profit margin will help to ensure the financial success of a business.',
-    // put the below in a new object seperating th emath calculation from the top display focused properties
-    // should make the decimal places dynamic but use this as a default
+        'Discount is the reduction in the price of goods or services offered by shopkeepers at the marked price. This percentage of the rebate is usually offered to increase the sales or clear the old stock of goods. The List price or Marked price is the price of an article as declared by the seller or the manufacturer, without any price reduction. The selling price is the actual price at which an article is sold after any reduction or discounts in the list price. "Off", "Reduction" are some common terms used to describe discounts. It should be noted that a discount is always calculated on the Marked price (List price) of the article.',
     variables: {
         OV: {
-            title: 'Original $',
+            name: 'Original $',
             id: 'OV',
             style: 'currency',
             readOnly: false,
-            maxFractionDigits: 5,
-            minFractionDigits: 0,
+            defaultMaxDecimalPlaces: 5,
+            defaultMinDecimalPlaces: 0,
             value: '',
             dependencies: ['DP', 'FV'],
             solve(DP, FV) {
@@ -19,12 +18,12 @@ const discountData = {
             },
         },
         DP: {
-            title: 'Discount %',
+            name: 'Discount %',
             id: 'DP',
             style: 'percent',
             readOnly: false,
-            maxFractionDigits: 5,
-            minFractionDigits: 0,
+            defaultMaxDecimalPlaces: 5,
+            defaultMinDecimalPlaces: 0,
             value: '',
             dependencies: ['OV', 'FV'],
             solve(OV, FV) {
@@ -32,12 +31,12 @@ const discountData = {
             },
         },
         DV: {
-            title: 'Discounted $',
+            name: 'Discounted $',
             id: 'DV',
             style: 'currency',
             readOnly: true,
-            maxFractionDigits: 5,
-            minFractionDigits: 0,
+            defaultMaxDecimalPlaces: 5,
+            defaultMinDecimalPlaces: 0,
             value: '',
             dependencies: ['OV', 'FV'],
             solve(OV, FV) {
@@ -45,12 +44,12 @@ const discountData = {
             },
         },
         FV: {
-            title: 'Final $',
+            name: 'Final $',
             id: 'FV',
             style: 'currency',
             readOnly: false,
-            maxFractionDigits: 5,
-            minFractionDigits: 0,
+            defaultMaxDecimalPlaces: 5,
+            defaultMinDecimalPlaces: 0,
             value: '',
             dependencies: ['OV', 'DP'],
             solve(OV, DP) {
@@ -58,6 +57,5 @@ const discountData = {
             },
         },
     },
-    requiredVariableCount: 2,
 };
 export default discountData;

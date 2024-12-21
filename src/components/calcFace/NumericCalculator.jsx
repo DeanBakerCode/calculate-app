@@ -3,6 +3,7 @@ import './numericCalculator.css';
 
 export default function NumericCalculator({ calculatorData }) {
     const variablesData = new Map(Object.entries(calculatorData.variables));
+    const requiredVariableCount = calculatorData.requiredVariableCount;
     // STATES
     const [variables, setVariables] = useState(variablesData);
     const [userValueIds, setUserValueIds] = useState(new Set());
@@ -30,19 +31,39 @@ export default function NumericCalculator({ calculatorData }) {
             const known = new Set(newUserValueIds);
             while (changed) {
                 changed = false;
-                for (const [id, variable] of newVariables) {
-                    if (
-                        !known.has(variable.id) &&
-                        variable.dependencies.every((dependency) =>
-                            known.has(dependency)
-                        )
-                    ) {
-                        const args = variable.dependencies.map(
-                            (dep) => newVariables.get(dep).value
+                // loop through copy of all the Variables
+                for (const [key, variable] of newVariables) {
+                    // check foe each of the variables are not in the know variables
+                    // if it is not known
+                    if (!known.has(variable.id)) {
+                        // get the dependencies for the (not know) variable so we can try to solve it
+                        const args = variable.dependencies.map((dep) => {
+                            // get the variable of each dependecy
+                            const depVariable = newVariables.get(dep);
+                            // if the variable is not null, is in the Known variables and it isn't empty, return the value
+                            if (depVariable) {
+                                if (
+                                    known.has(dep) &&
+                                    depVariable.value !== ''
+                                ) {
+                                    // return the dependiency variable value as a number
+                                    return parseFloat(depVariable.value);
+                                }
+                            }
+                        });
+                        const validArgs = args.filter(
+                            (arg) => arg !== undefined
                         );
-                        variable.solve(...args);
-                        known.add(variable.id);
-                        changed = true;
+                        if (validArgs.length >= requiredVariableCount) {
+                            // pass in the variable values to the sove method, making sure the args are in the right order on the main object
+                            variable.solve(...args);
+                            known.add(variable.id);
+                            console.log(
+                                `SOLVED ${variable.id} as ${variable.value}`
+                            );
+                            console.log(`known is now:`, known, '\n');
+                            changed = true;
+                        }
                     }
                 }
             }
@@ -142,6 +163,9 @@ export default function NumericCalculator({ calculatorData }) {
         if (!userValueIds.has(id)) {
             return intergerFormatter.format(valueString);
         }
+        if (value === '-') {
+            return value;
+        }
         // user Inputed value
         const [interger, decimal] = valueString.split('.');
         if (decimal == null) return intergerFormatter.format(interger);
@@ -181,7 +205,7 @@ export default function NumericCalculator({ calculatorData }) {
                 return (
                     <div className={itemClass()} key={index}>
                         <label>
-                            {item.title}
+                            {item.name}
                             {/* {':'} */}
                             <input
                                 id={id}
@@ -200,7 +224,7 @@ export default function NumericCalculator({ calculatorData }) {
             })}
             <div>
                 <button className="values-clear" onClick={handleClear}>
-                    Reset
+                    Clear
                 </button>
             </div>
         </div>

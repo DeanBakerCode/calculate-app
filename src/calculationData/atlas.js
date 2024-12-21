@@ -1,4 +1,5 @@
 import discountData from './sales/discountData';
+import profitMarginData from './sales/profitMargin';
 
 class category {
     constructor(name) {
@@ -8,9 +9,9 @@ class category {
     }
     addCalc(data) {
         const addCalculator = {
-            calculatorName: data.name,
+            calculatorName: data.title,
             category: this.categoryName,
-            to: this.to + '/' + data.name,
+            to: this.to + '/' + data.title,
             data: data,
         };
         this.calculators.push(addCalculator);
@@ -19,11 +20,12 @@ class category {
 //- Category Sales
 const finance = new category('Finance');
 finance.addCalc(discountData);
-finance.addCalc('Profit Margin');
-finance.addCalc('Rule of Seven');
+finance.addCalc(profitMarginData);
+finance.addCalc('more coming...');
 
 //- Category Inventory
 const inventory = new category('Inventory');
+inventory.addCalc('Re-order Point');
 
 //- Categories
 const atlas = [finance, inventory];
