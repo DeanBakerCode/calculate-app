@@ -63,6 +63,9 @@ export default function NavBar() {
                                                 );
                                             }
                                         )}
+                                        <li>
+                                            <a>more coming..</a>
+                                        </li>
                                     </ul>
                                 </li>
                             );

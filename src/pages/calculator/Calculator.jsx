@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 // gets the calculator data
 import { getcalculator } from '../../calculationData/atlas';
 // calculator Input component
@@ -8,6 +8,7 @@ import NumericCalculator from '../../components/calcFace/NumericCalculator';
 import './calculator.css';
 
 export default function Calculator() {
+    const navigate = useNavigate();
     // read the url parameters
     const { categoryPrm, calculatorPrm } = useParams();
     // state for the caculator data class
@@ -17,15 +18,13 @@ export default function Calculator() {
     //
     // On page load call the
     useEffect(() => {
-        getCalculatorData();
+        const calculatorData = getcalculator(categoryPrm, calculatorPrm);
+        if (!calculatorData) {
+            navigate('/' + categoryPrm);
+        }
+        setCalculatorData(() => calculatorData.data);
         forceUpdate.current++;
     }, [calculatorPrm]);
-
-    const getCalculatorData = () => {
-        setCalculatorData(() => {
-            return getcalculator(categoryPrm, calculatorPrm).data;
-        });
-    };
 
     if (!calculatorData) {
         return <p>Loading...</p>;

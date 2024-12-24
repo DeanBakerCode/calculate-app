@@ -1,17 +1,18 @@
-import discountData from './sales/discountData';
-import profitMarginData from './sales/profitMargin';
+import { discountData, profitMarginData } from './sales/sales';
+import { reOrderPointData, safetyStockData } from './inventory/inventory';
 
 class category {
     constructor(name) {
         this.categoryName = name;
-        this.to = '/' + name;
+        this.to = '/cat/' + name;
         this.calculators = []; // category calculators
     }
     addCalc(data) {
         const addCalculator = {
             calculatorName: data.title,
             category: this.categoryName,
-            to: this.to + '/' + data.title,
+            to: this.to + '/calc/' + data.title,
+            img: '',
             data: data,
         };
         this.calculators.push(addCalculator);
@@ -21,11 +22,11 @@ class category {
 const finance = new category('Finance');
 finance.addCalc(discountData);
 finance.addCalc(profitMarginData);
-finance.addCalc('more coming...');
 
 //- Category Inventory
 const inventory = new category('Inventory');
-inventory.addCalc('Re-order Point');
+inventory.addCalc(reOrderPointData);
+inventory.addCalc(safetyStockData);
 
 //- Categories
 const atlas = [finance, inventory];

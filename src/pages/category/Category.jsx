@@ -1,15 +1,19 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { PiCalculatorLight } from 'react-icons/pi';
 import { getCategory } from '../../calculationData/atlas';
 import './category.css';
 
 export default function Category() {
+    const navigate = useNavigate();
     const { categoryPrm } = useParams();
     const [category, setCategory] = useState(null);
 
     useEffect(() => {
         const categoryData = getCategory(categoryPrm);
+        if (!categoryData) {
+            navigate('/');
+        }
         setCategory(() => categoryData);
     }, [categoryPrm]);
 
