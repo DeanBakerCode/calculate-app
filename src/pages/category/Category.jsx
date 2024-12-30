@@ -23,7 +23,9 @@ export default function Category() {
 
     return (
         <div className="category">
-            <h1>{category.categoryName}</h1>
+            <h2 className="font-category-page-title">
+                {category.categoryName}
+            </h2>
             <p></p>
             <div className="category-calculators">
                 <ul>
@@ -37,9 +39,12 @@ export default function Category() {
                                 >
                                     <div className="calc-item-img">
                                         <img src={calcItem.imagePath} alt="" />
+                                        <PiCalculatorLight className="calc-item-icon" />
                                     </div>
                                     <div className="calc-item-details">
-                                        <h3>{calcItem.calculatorName}</h3>
+                                        <h3 className="font-category-page-calculator-title">
+                                            {calcItem.calculatorName}
+                                        </h3>
                                         <p>{calcItem.description}</p>
                                     </div>
                                 </Link>

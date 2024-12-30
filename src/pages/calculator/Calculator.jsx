@@ -31,18 +31,32 @@ export default function Calculator() {
     }
 
     return (
-        <div className="calculator">
+        <div className="calculator-page">
             <div className="calculator-container">
-                <div className="calculator-details">
-                    <h1>{calculatorData.title}</h1>
-                    <p>{calculatorData.description}</p>
+                <div className="calculator-title">
+                    <h4 className="font-calculator-page-category">
+                        {categoryPrm}
+                    </h4>
+                    <h2 className="font-calculator-page-title">
+                        {calculatorData.title}
+                    </h2>
                 </div>
-                {calculatorData.variables && (
-                    <NumericCalculator
-                        key={forceUpdate.current}
-                        calculatorData={calculatorData}
-                    />
-                )}
+                <div className="calculator-description">
+                    <p className="font-calculator-page-description">
+                        {calculatorData.description}
+                    </p>
+                </div>
+                <div className="calculator-UI">
+                    {/* <h1 className="mobile-heading">{calculatorData.title}</h1> */}
+
+                    {calculatorData.variables && (
+                        <NumericCalculator
+                            className="numericCalculator"
+                            key={forceUpdate.current}
+                            calculatorData={calculatorData}
+                        />
+                    )}
+                </div>
             </div>
         </div>
     );

@@ -1,77 +1,113 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import atlas from '../../calculationData/atlas';
+import { PiCaretDownBold, PiListBold, PiX } from 'react-icons/pi';
+
+import atlas from '../../calculationData/atlas'; // navigation file
 import './navbar.css';
-import Logo from '../../assets/calculateLogo.png';
-import { PiCaretDownBold } from 'react-icons/pi';
+
+import Logo from '../../assets/calculateLogo.png'; // logo image
 
 // const categories = [...atlas.values]
 
 export default function NavBar() {
+    const [toggleMenu, setToggleMenu] = useState(false);
+    const [menuCategory, setMenuCategory] = useState(null);
+
+    console.log(menuCategory);
+
     return (
         <header className="navBar">
-            <div className="navBar-logo">
+            <div className="navBar-logo" onClick={() => setToggleMenu(false)}>
                 <NavLink to="/">
                     <img src={Logo} />
                 </NavLink>
             </div>
-            <nav className="navBar-nav">
-                <ul className="nav-categories">
-                    {atlas &&
-                        atlas.map((category, index) => {
-                            return (
-                                <li key={index} className="nav-item">
-                                    <NavLink
-                                        to={category.to}
-                                        className={({ isActive }) =>
-                                            isActive ? 'isActiveLink' : ''
+            <div
+                className=" navBar-mobile-button"
+                onClick={() => {
+                    setToggleMenu(!toggleMenu);
+                    // setMenuCategory(null);
+                }}
+            >
+                {toggleMenu && <PiX />}
+                {!toggleMenu && <PiListBold />}
+            </div>
+            <div className={`navBar-menu ${toggleMenu && 'mobile-menu'}`}>
+                <nav className="navBar-nav">
+                    <ul className="category-list">
+                        {atlas &&
+                            atlas.map((category, index) => {
+                                return (
+                                    <li
+                                        key={index}
+                                        className={
+                                            menuCategory === index
+                                                ? 'category-list-open category-list-item nav-hover'
+                                                : 'category-list-item nav-hover'
                                         }
-                                    >
-                                        {category.categoryName}
-                                        <PiCaretDownBold className="nav-item-icon" />
-                                    </NavLink>
+                                        onClick={() => {
+                                            console.log('click');
 
-                                    <ul className="nav-calculators">
-                                        {category.calculators.map(
-                                            (calculator, index) => {
-                                                {
-                                                    // console.log(calculator);
-                                                }
-                                                return (
-                                                    <li
-                                                        key={index}
-                                                        className={
-                                                            !calculator.calculatorName
-                                                                ? 'nav-item disabled-link'
-                                                                : 'nav-item'
-                                                        }
-                                                    >
-                                                        <NavLink
-                                                            to={calculator.to}
-                                                            className={({
-                                                                isActive,
-                                                            }) =>
-                                                                isActive
-                                                                    ? 'isActiveLink'
-                                                                    : ''
-                                                            }
-                                                        >
-                                                            {calculator.calculatorName
-                                                                ? calculator.calculatorName
-                                                                : calculator.data}
-                                                        </NavLink>
-                                                    </li>
-                                                );
+                                            setMenuCategory(() => {
+                                                if (menuCategory === index) {
+                                                    return null;
+                                                } else return index;
+                                            });
+                                        }}
+                                    >
+                                        <NavLink
+                                            to={category.to}
+                                            className={({ isActive }) =>
+                                                isActive
+                                                    ? 'category-list-item-active'
+                                                    : ''
                                             }
-                                        )}
-                                        <li>
-                                            <a>more coming..</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            );
-                        })}
-                </ul>
-            </nav>
+                                        >
+                                            {category.categoryName}
+                                            <PiCaretDownBold className="category-list-item-icon" />
+                                        </NavLink>
+
+                                        <ul className="calculator-list">
+                                            {category.calculators.map(
+                                                (calculator, index) => {
+                                                    return (
+                                                        <li
+                                                            key={index}
+                                                            className="calculator-list-item nav-hover"
+                                                            onClick={(e) => {
+                                                                e.stopPropagation();
+                                                                setToggleMenu(
+                                                                    !toggleMenu
+                                                                );
+                                                            }}
+                                                        >
+                                                            <NavLink
+                                                                to={
+                                                                    calculator.to
+                                                                }
+                                                                className={({
+                                                                    isActive,
+                                                                }) =>
+                                                                    isActive
+                                                                        ? 'calculator-list-item-active font-nav-calculator'
+                                                                        : 'nav-calculator-font'
+                                                                }
+                                                            >
+                                                                {calculator.calculatorName
+                                                                    ? calculator.calculatorName
+                                                                    : calculator.data}
+                                                            </NavLink>
+                                                        </li>
+                                                    );
+                                                }
+                                            )}
+                                        </ul>
+                                    </li>
+                                );
+                            })}
+                    </ul>
+                </nav>
+            </div>
         </header>
     );
 }
