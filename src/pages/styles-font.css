@@ -1,0 +1,87 @@
+/*  FOR ALL FONT RELATED STYLES  */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* font */
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* rem root  */
+    /* clamp(min, val, max) */
+    /* title, home page title only */
+    --font-size-h1: clamp(2rem, 10vw, 3.5rem);
+    /* Heading, page heading */
+    --font-size-h2: clamp();
+    /* section, category */
+    --font-size-h3: 1.25rem;
+    /* sub section, calculator name on category page */
+    --font-size-h4: clamp();
+    /*  */
+    --font-size-h5: clamp();
+    /*  */
+    --font-size-p: clamp(1em, 1.25vw, 1.25em);
+    /*  */
+    --font-size-hint: clamp();
+
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/font */
+    /* ^must */
+    /* style variant weight size^/height stretch family^ */
+    --font-nav-category: 500 2rem/32px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0;
+    padding: 0;
+}
+/* home page */
+.site-title-font {
+    font-size: 3.2rem;
+}
+.site-title-tagline-font {
+    font-size: 1.25rem;
+}
+/* cat page */
+.font-category-page-title {
+    font-size: 1.8rem;
+}
+.font-category-page-sub-category {
+    font-size: 1.5rem;
+}
+.font-category-page-calculator-title {
+    font-size: 1.2rem;
+}
+/* calc page */
+.font-calculator-page-category {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.font-calculator-page-title {
+    font-size: 1.8rem;
+}
+.font-calculator-page-description {
+    font-size: 1rem;
+    line-height: 1.6rem;
+}
+/* navBar compononet */
+.font-nav-category {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 32px;
+}
+.font-nav-sub-category {
+    font-size: 1rem;
+}
+.font-nav-calculator {
+    font-size: 1rem;
+}
+/* numeric calculator component */
+.font-item-lable {
+}
+.font-item-input {
+}

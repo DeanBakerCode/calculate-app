@@ -1,15 +1,16 @@
 .values-set {
-    border-radius: 12px;
+    border-radius: 16px;
     background-color: var(--color-bg);
-    width: 300px;
+    min-width: 250px;
     padding: 12px;
     box-shadow: var(--floating-shadow);
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
+    flex: 1 1 auto;
     gap: 20px;
 }
 .set-item {
-    border: 2px solid var(--hover-bg);
+    border: 2px solid #00000010;
     height: 52px;
     border-radius: 8px;
     padding: 4px 6px;
@@ -38,7 +39,6 @@
 }
 .read-only,
 .read-only input {
-    /* border: 1px solid red; */
     cursor: not-allowed;
 }
 .read-only:hover {
@@ -61,5 +61,7 @@ input:selection .set-item {
     background-color: var(--hover-bg);
 }
 .user-value {
-    border-bottom: 2px solid lightblue;
+    border-bottom: 2px solid darkgrey;
+}
+@media (max-width: 500px) {
 }

@@ -1,47 +1,45 @@
 .category {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-.category h1 {
-	text-transform: capitalize;
-}
-.category-calculators {
-	display: flex;
+    padding: var(--page-padding);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .category-calculators ul {
-	display: flex;
-	gap: 4em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4em;
 
-	padding: 0;
-	list-style: none;
-
-	/* background-color: antiquewhite; */
+    list-style: none;
+    padding: 0;
 }
 .category-calculators li {
-	list-style: none;
-	/* border: 1px solid green; */
+    list-style: none;
 }
 .calc-item {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    /* height: 200px; */
+    padding: 16px;
+    border-radius: var(--card-radius);
 
-	width: 200px;
-	/* height: 200px; */
-	padding: 12px;
-	border-radius: 8px;
-
-	background-color: var(--hover-bg);
-	text-decoration: none;
-	color: var(--text-color);
+    background-color: var(--hover-bg);
+    text-decoration: none;
+    color: var(--text-color);
+}
+.calc-item-icon {
+    font-size: 4rem;
 }
 .calc-item-img {
-	height: 100px;
+    height: 100px;
 }
 .calc-item-img img {
-	object-fit: cover;
+    object-fit: cover;
 }
 .calc-item p {
-	margin: 0;
+    margin: 0;
 }
