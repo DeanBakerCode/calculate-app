@@ -1,5 +1,6 @@
 const reOrderPointData = {
     title: 'Re-Order Point', //  displaying title for this Calculator
+    url: 'reOrderPoint',
     description:
         "A Re-Order Point (ROP) is the level of inventory at which a business should place a new order to avoid running out of stock. It's also known as the reorder level or optimal reorder level", // displaying description for this calculator, usually from Wiki or Dictionary
     variables: {

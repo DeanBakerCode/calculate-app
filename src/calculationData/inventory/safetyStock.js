@@ -1,5 +1,6 @@
 const safetyStockData = {
     title: 'Safety Stock', //  displaying title for this Calculator
+    url: 'safetyStock',
     description:
         "Safety stock is extra inventory that a business keeps to reduce the risk of stockouts by serving as buffer against fluctuations in demand. It doesn't however garrentee not stocking out.", // displaying description for this calculator, usually from Wiki or Dictionary
     variables: {
