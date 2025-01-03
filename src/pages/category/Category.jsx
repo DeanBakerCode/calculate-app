@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { PiCalculatorLight } from 'react-icons/pi';
 import { getCategory } from '../../calculationData/atlas';
 import './category.css';
+import defaultImage from './calc.svg';
 
 export default function Category() {
     const navigate = useNavigate();
@@ -38,14 +39,19 @@ export default function Category() {
                                     key={index}
                                 >
                                     <div className="calc-item-img">
-                                        <img src={calcItem.imagePath} alt="" />
-                                        <PiCalculatorLight className="calc-item-icon" />
+                                        <img
+                                            src={
+                                                calcItem.data.img
+                                                    ? calcItem.data.img
+                                                    : defaultImage
+                                            }
+                                            alt=""
+                                        />
                                     </div>
                                     <div className="calc-item-details">
                                         <h3 className="font-category-page-calculator-title">
                                             {calcItem.calculatorName}
                                         </h3>
-                                        <p>{calcItem.description}</p>
                                     </div>
                                 </Link>
                             </li>

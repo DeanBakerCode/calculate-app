@@ -22,9 +22,11 @@
 .calc-item {
     display: flex;
     flex-direction: column;
-    width: 200px;
-    /* height: 200px; */
+    min-width: 160px;
+    max-width: 200px;
+
     padding: 16px;
+    gap: 16px;
     border-radius: var(--card-radius);
 
     background-color: var(--hover-bg);
@@ -35,11 +37,11 @@
     font-size: 4rem;
 }
 .calc-item-img {
-    height: 100px;
+    margin: auto;
 }
 .calc-item-img img {
     object-fit: cover;
 }
-.calc-item p {
-    margin: 0;
+.calc-item-details {
+    margin: auto;
 }

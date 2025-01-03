@@ -1,14 +1,17 @@
+import cpm from './cpm.svg';
 const costPerThousand = {
     title: 'Cost Per Thousand (CPM)', //  displaying title for this Calculator
     url: 'costPerThousand',
-    description:
-        'In digital marketing, CPM refers to what an advertiser pays for 1,000 impressions of an advertisement on a web page. What is important about CPM marketing when it comes to digital marketing is understanding the meaning of an impression. An impression means the ad, as an element of a web page, loaded and received a view. This isn’t the same as a page view.', // displaying description for this calculator, usually from Wiki or Dictionary
+    img: cpm,
+    description: `Cost per thousand, also called Cost per mille (CPM) (in Latin, French and Italian, 'mille' means 'thousand'), is a commonly-used measurement in advertising.
+        It is the cost an advertiser pays for one thousand views or impressions of an advertisement. Radio, television, newspaper, magazine, out-of-home advertising, and online advertising can be purchased on the basis of exposing the ad to one thousand viewers or listeners. 
+        It is used in marketing as a benchmarking metric to calculate the relative cost of an advertising campaign or an ad message in a given medium.`,
     consideration: '',
     fact: "The 'M' in CPM, symbolises the roman numeral for Thousand",
     variables: {
         // collection of variables for this calculator
         CO: {
-            name: 'Cost', //  displaying title for this variable
+            name: 'Cost $', //  displaying title for this variable
             id: 'CO', // id of this variable eg: "OV" for Original Value
             style: 'currency', // "decimal" "currency" "percent" "unit"
             readOnly: false, // default value
@@ -22,7 +25,7 @@ const costPerThousand = {
             }, // method used to solve this.value
         },
         IM: {
-            name: 'Impressions', //  displaying title for this variable
+            name: 'Impressions:', //  displaying title for this variable
             id: 'IM', // id of this variable eg: "OV" for Original Value
             style: 'decimal', // "decimal" "currency" "percent" "unit"
             readOnly: false, // default value
@@ -36,7 +39,7 @@ const costPerThousand = {
             }, // method used to solve this.value
         },
         CM: {
-            name: 'CPM', //  displaying title for this variable
+            name: 'CPM $', //  displaying title for this variable
             id: 'CM', // id of this variable eg: "OV" for Original Value
             style: 'currency', // "decimal" "currency" "percent" "unit"
             readOnly: false, // default value

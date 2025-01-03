@@ -1,4 +1,4 @@
-import reOrderPointData from './re-orderPoint';
-import safetyStockData from './safetyStock';
+import reOrderPointData from './re-orderPointData';
+import safetyStockData from './safetyStockData';
 
 export { reOrderPointData, safetyStockData };

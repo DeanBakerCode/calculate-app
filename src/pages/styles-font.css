@@ -49,6 +49,7 @@ p {
 /* cat page */
 .font-category-page-title {
     font-size: 1.8rem;
+    margin-bottom: 2rem;
 }
 .font-category-page-sub-category {
     font-size: 1.5rem;

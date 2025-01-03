@@ -206,7 +206,6 @@ export default function NumericCalculator({ calculatorData }) {
                     <div className={itemClass()} key={index}>
                         <label>
                             {item.name}
-                            {/* {':'} */}
                             <input
                                 id={id}
                                 type="text"

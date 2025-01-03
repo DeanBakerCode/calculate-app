@@ -1,13 +1,15 @@
+import safety from './safety.svg';
 const safetyStockData = {
     title: 'Safety Stock', //  displaying title for this Calculator
     url: 'safetyStock',
-    description:
-        "Safety stock is extra inventory that a business keeps to reduce the risk of stockouts by serving as buffer against fluctuations in demand. It doesn't however garrentee not stocking out.", // displaying description for this calculator, usually from Wiki or Dictionary
+    img: safety,
+    description: ` Safety stock is extra inventory that a business keeps to reduce the risk of stockouts by serving as buffer against fluctuations in demand. It doesn't however garrentee not stocking out.
+       Adequate safety stock levels permit business operations to proceed according to their plans.[1] Safety stock is held when uncertainty exists in demand, supply, or manufacturing yield, and serves as an insurance against stockouts`,
     variables: {
         US: {
-            name: 'Daily Unit Sales', //  displaying name for this variable
+            name: 'Daily Unit Sales:', //  displaying name for this variable
             id: '', // id of this variable eg: "OV" for Original Value
-            style: '', // "decimal" "currency" "percent" "unit"
+            style: 'unit', // "decimal" "currency" "percent" "unit"
             readOnly: false, // default value
             required: false, // default value, must have to evaluate any other value
             defaultMaxDecimalPlaces: 5, // default value
@@ -19,9 +21,9 @@ const safetyStockData = {
             },
         },
         LT: {
-            name: 'Maximum Lead Time Days', //  displaying name for this variable
+            name: 'Maximum Lead Time Days:', //  displaying name for this variable
             id: '', // id of this variable eg: "OV" for Original Value
-            style: '', // "decimal" "currency" "percent" "unit"
+            style: 'unit', // "decimal" "currency" "percent" "unit"
             readOnly: false, // default value
             required: false, // default value, must have to evaluate any other value
             defaultMaxDecimalPlaces: 5, // default value
@@ -33,9 +35,9 @@ const safetyStockData = {
             },
         },
         SS: {
-            name: 'Safety Stock', //  displaying name for this variable
+            name: 'Safety Stock:', //  displaying name for this variable
             id: '', // id of this variable eg: "OV" for Original Value
-            style: '', // "decimal" "currency" "percent" "unit"
+            style: 'unit', // "decimal" "currency" "percent" "unit"
             readOnly: false, // default value
             required: false, // default value, must have to evaluate any other value
             defaultMaxDecimalPlaces: 5, // default value

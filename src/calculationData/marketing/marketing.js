@@ -1,3 +1,3 @@
-import costPerThousand from './costPerThousand';
+import costPerThousand from './costPerThousandData';
 
 export { costPerThousand };

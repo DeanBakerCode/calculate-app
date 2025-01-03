@@ -1,19 +1,18 @@
 /* top element */
 .navBar {
     display: flex;
+    align-items: center;
     position: relative;
-    gap: 24px;
-    padding: 0.8em;
-
-    border-bottom: 1px solid var(--hover-bg);
+    gap: 1.4rem;
+    padding: 0.8em 1.4rem;
 }
 /* nav logo img */
 .navBar-logo {
-    display: flex;
-    align-items: center;
+    height: 1.5rem;
 }
 .navBar-logo img {
-    height: 1.2em;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* removing default 'UL' styles */
@@ -55,7 +54,8 @@
 
 .category-list-item-icon {
     height: 1em;
-    font-size: 0.94em;
+    margin-top: 4px;
+    font-size: 0.8em;
     rotate: 0deg;
 }
 .category-list-item:hover .category-list-item-icon {

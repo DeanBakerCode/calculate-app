@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 // gets the calculator data
 import { getcalculator } from '../../calculationData/atlas';
 // calculator Input component
-import NumericCalculator from '../../components/calcFace/NumericCalculator';
+import { NumericCalculator } from '../../components/components';
 //styles
 import './calculator.css';
 
@@ -34,12 +34,17 @@ export default function Calculator() {
         <div className="calculator-page">
             <div className="calculator-container">
                 <div className="calculator-title">
-                    <h4 className="font-calculator-page-category">
-                        {categoryPrm}
-                    </h4>
-                    <h2 className="font-calculator-page-title">
-                        {calculatorData.title}
-                    </h2>
+                    <div className="calculator-title-img">
+                        <img src={calculatorData.img} alt="" />
+                    </div>
+                    <div className="calculator-title-text">
+                        <h4 className="font-calculator-page-category">
+                            {categoryPrm}
+                        </h4>
+                        <h2 className="font-calculator-page-title">
+                            {calculatorData.title}
+                        </h2>
+                    </div>
                 </div>
                 <div className="calculator-description">
                     <p className="font-calculator-page-description">

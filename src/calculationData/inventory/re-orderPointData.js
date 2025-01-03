@@ -1,8 +1,10 @@
+import reorder from './reorder.svg';
 const reOrderPointData = {
     title: 'Re-Order Point', //  displaying title for this Calculator
     url: 'reOrderPoint',
-    description:
-        "A Re-Order Point (ROP) is the level of inventory at which a business should place a new order to avoid running out of stock. It's also known as the reorder level or optimal reorder level", // displaying description for this calculator, usually from Wiki or Dictionary
+    img: reorder,
+    description: `The reorder point (ROP), also reorder level (ROL) or "optimal re-order level", is the level of inventory which triggers an action to replenish that particular inventory. It is a minimum amount of an item which a business holds in stock, such that, when stock falls to this amount, the item must be reordered. 
+    It is normally calculated as the forecast usage during the replenishment lead time plus safety stock. It is assumed that there is no time lag between ordering and receipt of materials.`,
     variables: {
         US: {
             name: 'Daily Unit Sales:', //  displaying name for this variable
@@ -19,7 +21,7 @@ const reOrderPointData = {
             },
         },
         LT: {
-            name: 'Lead Time Days:', //  displaying name for this variable
+            name: 'Ave Lead Time Days:', //  displaying name for this variable
             id: 'LT', // id of this variable eg: "OV" for Original Value
             style: 'unit', // "decimal" "currency" "percent" "unit"
             readOnly: false, // default value

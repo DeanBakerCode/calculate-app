@@ -1,4 +1,4 @@
 import discountData from './discountData';
-import profitMarginData from './profitMargin';
+import profitMarginData from './profitMarginData';
 
 export { discountData, profitMarginData };

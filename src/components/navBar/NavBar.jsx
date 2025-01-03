@@ -5,15 +5,11 @@ import { PiCaretDownBold, PiListBold, PiX } from 'react-icons/pi';
 import atlas from '../../calculationData/atlas'; // navigation file
 import './navbar.css';
 
-import Logo from '../../assets/calculateLogo.png'; // logo image
-
-// const categories = [...atlas.values]
+import Logo from '../../assets/logo.svg'; // logo image
 
 export default function NavBar() {
     const [toggleMenu, setToggleMenu] = useState(false);
     const [menuCategory, setMenuCategory] = useState(null);
-
-    console.log(menuCategory);
 
     return (
         <header className="navBar">
@@ -26,11 +22,9 @@ export default function NavBar() {
                 className=" navBar-mobile-button"
                 onClick={() => {
                     setToggleMenu(!toggleMenu);
-                    // setMenuCategory(null);
                 }}
             >
-                {toggleMenu && <PiX />}
-                {!toggleMenu && <PiListBold />}
+                {toggleMenu ? <PiX /> : <PiListBold />}
             </div>
             <div className={`navBar-menu ${toggleMenu && 'mobile-menu'}`}>
                 <nav className="navBar-nav">

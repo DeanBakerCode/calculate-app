@@ -4,8 +4,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    /* background-color: antiquewhite; */
 }
 .calculator-container {
     display: grid;
@@ -14,11 +12,23 @@
         'description UI'
         'description UI';
     column-gap: 4vw;
-    /* background-color: aquamarine; */
 }
 
 .calculator-title {
     grid-area: heading;
+    display: flex;
+    gap: 1.4vw;
+    height: fit-content;
+    /* border: 1px solid black; */
+}
+.calculator-title-img {
+    height: 3.6rem;
+    flex-shrink: 1;
+}
+.calculator-title-img img {
+    height: 100%;
+}
+.calculator-title-text {
 }
 .calculator-description {
     grid-area: description;
@@ -30,7 +40,8 @@
     flex-grow: 1;
 }
 
-.calculator-details p {
+.calculator-description p {
+    line-break: loose;
     text-align: justify;
 }
 
