@@ -21,7 +21,7 @@ const costPerThousand = {
             value: '', // default value
             dependencies: ['IM', 'CM'], // variables that can be used to solve
             solve(IM, CM) {
-                this.value = IM * CM;
+                this.value = (CM / 1000) * IM;
             }, // method used to solve this.value
         },
         IM: {
@@ -35,7 +35,7 @@ const costPerThousand = {
             value: '', // default value
             dependencies: ['CO', 'CM'], // variables that can be used to solve
             solve(CO, CM) {
-                this.value = CO / CM;
+                this.value = (CO / CM) * 1000;
             }, // method used to solve this.value
         },
         CM: {
@@ -49,7 +49,7 @@ const costPerThousand = {
             value: '', // default value
             dependencies: ['CO', 'IM'], // variables that can be used to solve
             solve(CO, IM) {
-                this.value = CO / IM;
+                this.value = (CO / IM) * 1000;
             }, // method used to solve this.value
         },
     },
