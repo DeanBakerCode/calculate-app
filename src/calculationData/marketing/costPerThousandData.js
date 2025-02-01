@@ -11,7 +11,7 @@ const costPerThousand = {
     variables: {
         // collection of variables for this calculator
         CO: {
-            name: 'Cost $', //  displaying title for this variable
+            name: 'Budget $', //  displaying title for this variable
             id: 'CO', // id of this variable eg: "OV" for Original Value
             style: 'currency', // "decimal" "currency" "percent" "unit"
             readOnly: false, // default value
